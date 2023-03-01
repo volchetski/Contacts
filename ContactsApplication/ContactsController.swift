@@ -64,11 +64,10 @@ class ContactsController: UIViewController {
             let name = contact.givenName
             let familyName = contact.familyName
             let hasImage = contact.imageDataAvailable
-            guard let number = contact.phoneNumbers.first?.value.stringValue else { return }
             imageContact = contact.imageData
-            
-            
-            let contactToAppend = Contact(givenName: name, familyName: familyName, numberPhone: number, hasContactImage: hasImage)
+            guard let number = contact.phoneNumbers.first?.value.stringValue else { return }
+        
+            let contactToAppend = Contact(givenName: name, familyName: familyName, numberPhone: number, hasImage: hasImage)
             
             contacts.append(contactToAppend)
         }

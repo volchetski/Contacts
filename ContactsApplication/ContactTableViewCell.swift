@@ -58,15 +58,12 @@ class ContactTableViewCell: UITableViewCell {
         return button
     }()
     
-    var link = ContactsController()
-    
     public var contact: Contact? {
         didSet {
             guard let contactItem = contact else { return }
             givenNameLabel.text = contactItem.givenName
             familyNameLabel.text = contactItem.familyName
             phoneNumberLabel.text = contactItem.numberPhone
-            profileImageView.image = contactItem.hasContactImage ? UIImage(data: link.imageContact) : UIImage(systemName: Constants.contactsTabBarImageName)
         }
     }
     
